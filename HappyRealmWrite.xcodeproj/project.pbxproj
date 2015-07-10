@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A60990AA1B5032B3000B1893 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A60990A91B5032B3000B1893 /* main.m */; };
+		A60990B21B5038E2000B1893 /* MyRlmObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A60990B11B5038E2000B1893 /* MyRlmObject.m */; };
+		A60990B51B503961000B1893 /* RLMRealm+WriteBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A60990B41B503961000B1893 /* RLMRealm+WriteBlock.m */; };
+		D7BBBC44751E782CBCF347CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4F543BA60173B47E079A09 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,13 @@
 /* Begin PBXFileReference section */
 		A60990A61B5032B3000B1893 /* HappyRealmWrite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HappyRealmWrite; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60990A91B5032B3000B1893 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A60990B01B5038E2000B1893 /* MyRlmObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRlmObject.h; sourceTree = "<group>"; };
+		A60990B11B5038E2000B1893 /* MyRlmObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRlmObject.m; sourceTree = "<group>"; };
+		A60990B31B503961000B1893 /* RLMRealm+WriteBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RLMRealm+WriteBlock.h"; sourceTree = "<group>"; };
+		A60990B41B503961000B1893 /* RLMRealm+WriteBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RLMRealm+WriteBlock.m"; sourceTree = "<group>"; };
+		AE4F543BA60173B47E079A09 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5F369BE96E95C9F42B5A9F3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B79EB5D5BED96B9DBA11C49A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +42,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7BBBC44751E782CBCF347CA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1532FB5A68A84CCB9BF64CA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE4F543BA60173B47E079A09 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48A32C171EC503997765DF50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5F369BE96E95C9F42B5A9F3 /* Pods.debug.xcconfig */,
+				B79EB5D5BED96B9DBA11C49A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A609909D1B5032B3000B1893 = {
 			isa = PBXGroup;
 			children = (
 				A60990A81B5032B3000B1893 /* HappyRealmWrite */,
 				A60990A71B5032B3000B1893 /* Products */,
+				48A32C171EC503997765DF50 /* Pods */,
+				1532FB5A68A84CCB9BF64CA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				A60990A91B5032B3000B1893 /* main.m */,
+				A60990B31B503961000B1893 /* RLMRealm+WriteBlock.h */,
+				A60990B41B503961000B1893 /* RLMRealm+WriteBlock.m */,
+				A60990B01B5038E2000B1893 /* MyRlmObject.h */,
+				A60990B11B5038E2000B1893 /* MyRlmObject.m */,
 			);
 			path = HappyRealmWrite;
 			sourceTree = "<group>";
@@ -69,9 +103,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A60990AD1B5032B3000B1893 /* Build configuration list for PBXNativeTarget "HappyRealmWrite" */;
 			buildPhases = (
+				D6E6F65D0760B9E8A883E28C /* Check Pods Manifest.lock */,
 				A60990A21B5032B3000B1893 /* Sources */,
 				A60990A31B5032B3000B1893 /* Frameworks */,
 				A60990A41B5032B3000B1893 /* CopyFiles */,
+				8F2B4B16936BD02445A7F288 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -113,12 +149,47 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8F2B4B16936BD02445A7F288 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6E6F65D0760B9E8A883E28C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A60990A21B5032B3000B1893 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60990B21B5038E2000B1893 /* MyRlmObject.m in Sources */,
 				A60990AA1B5032B3000B1893 /* main.m in Sources */,
+				A60990B51B503961000B1893 /* RLMRealm+WriteBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +275,7 @@
 		};
 		A60990AE1B5032B3000B1893 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5F369BE96E95C9F42B5A9F3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -211,6 +283,7 @@
 		};
 		A60990AF1B5032B3000B1893 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B79EB5D5BED96B9DBA11C49A /* Pods.release.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -235,6 +308,7 @@
 				A60990AF1B5032B3000B1893 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

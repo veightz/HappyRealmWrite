@@ -7,11 +7,37 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <Realm.h>
+#import "MyRlmObject.h"
+#import "RLMRealm+WriteBlock.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
         NSLog(@"Hello, World!");
+        
+        MyRlmObject *myRealmObject = [[MyRlmObject alloc] init];
+        myRealmObject.title = @"first";
+    
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        
+        [realm write:^{
+            [realm deleteAllObjects];
+        }];
+        
+        [realm write:^{
+            [realm addObject:myRealmObject];
+        } completion:^{
+            RLMResults *results = [MyRlmObject allObjects];
+            NSLog(@"current object counts: %@", @(results.count));
+        }];
+        
+        [realm writeInBackground:^{
+            MyRlmObject *myRealmObject = [[MyRlmObject alloc] init];
+            myRealmObject.title = @"two";
+            [realm addObject:myRealmObject];
+        } completion:^{
+            RLMResults *results = [MyRlmObject allObjects];
+            NSLog(@"current object counts: %@", @(results.count));
+        }];
     }
     return 0;
 }
