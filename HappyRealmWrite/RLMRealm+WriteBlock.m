@@ -13,7 +13,7 @@ static dispatch_queue_t fetchDefaultBackgroundWriteQueue() {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         kDefaultBackgroundWriteQueue =
-        dispatch_queue_create("kDefaultBackgroundWriteQueue", DISPATCH_QUEUE_SERIAL);
+        dispatch_queue_create("com.realm.background.write", DISPATCH_QUEUE_SERIAL);
     });
     return kDefaultBackgroundWriteQueue;
 }
